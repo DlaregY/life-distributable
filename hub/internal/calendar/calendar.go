@@ -2111,7 +2111,7 @@ func (c *Calendar) spawnNext(it Item) {
 	// own session as its source, so without a reason the guard would refuse it
 	// against the row itself or a same-goal sibling citing the same rec.
 	next := Item{Title: it.Title, Detail: it.Detail, Kind: it.Kind, Day: nd, At: it.At, Repeat: it.Repeat, GoalID: it.GoalID, ThreadID: it.ThreadID, Source: it.Source, NagMin: it.NagMin, PrevID: it.ID, Due: it.Due,
-		Surface: it.Surface, AskKind: it.AskKind, CheckHint: it.CheckHint, Distinct: "next occurrence of " + it.ID}
+		Say: it.Say, Surface: it.Surface, AskKind: it.AskKind, CheckHint: it.CheckHint, Distinct: "next occurrence of " + it.ID}
 	for _, t := range store.StepTitles(store.LoadSteps(c.db, it.ID)[it.ID]) {
 		next.Steps = append(next.Steps, store.Step{Title: t})
 	}
